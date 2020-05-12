@@ -7,6 +7,14 @@
 ### 3º
 # La función chance revibe 5 dados y los suma si es la suma de 5 dados se podfria
 # simplement recibir self y sumar los dados de seff
+
+### 4º
+# las función yathzee_score_50 también puede ir dentro de una clase
+# ya que lo recibe es una lista puede ser perfectamente self.dice
+
+### 5º
+# Las funciones ones, twos threes pueden ir en la misma función
+# además de ir dentro de la clase
 class Yahtzee:
 
     @staticmethod # podria ser un metodo de la clase
@@ -20,6 +28,7 @@ class Yahtzee:
         else:
             return 0
 
+    ### def ones, twos, threes in the same funcion
     @staticmethod
     def ones(d1, d2, d3, d4, d5):
         lista = (d1, d2, d3, d4, d5)
@@ -47,6 +56,13 @@ class Yahtzee:
     def sixes(self):
         return self.dice.count(6)*6
 
+
+    ###
+    # la forma de cear la lista es repetitiva en score_pair y 
+    # two_pair por lo que crearé una función comun para ambas
+    # que cree un atributo de la clase llamado self.numeros
+    # y ambas funciones convertidas a funciones de la clase
+    # reciban esta lista
     @staticmethod
     def score_pair(d1,  d2,  d3,  d4,  d5):
         counts = [0]*6
@@ -81,6 +97,7 @@ class Yahtzee:
         else:
             return 0
 
+    # Three_of_a_kind_four_of_a_kinf pueden ir en una sola función y ser atributos de la clase
     @staticmethod
     def four_of_a_kind(d1,  d2,  d3,  d4,  d5):
         lista = [d1, d2, d3, d4, d5]

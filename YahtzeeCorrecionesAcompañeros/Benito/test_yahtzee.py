@@ -4,7 +4,7 @@ from yahtzee import Yahtzee
 # These unit tests can be run using the py.test framework
 # available from http://pytest.org/
 
-
+# Se modifica ya que se han incluido los metodos en la clase
 def test_chance_scores_sum_of_all_dice():
     expected = 15
     actual = Yahtzee.chance(2, 3, 4, 5, 1)
@@ -18,6 +18,10 @@ def test_yahtzee_scores_50():
     assert 0 == Yahtzee.yathzee_scores_50([6, 6, 6, 6, 3])
 
 
+### 
+# test_1s test_2s y test 3s pueden ir en el mismo test
+# además de que necesitan una instancia de Yatzee al pertenecer
+# a la misma clase
 def test_1s():
     assert Yahtzee.ones(1, 2, 3, 4, 5) == 1
     assert 2 == Yahtzee.ones(1, 2, 1, 4, 5)

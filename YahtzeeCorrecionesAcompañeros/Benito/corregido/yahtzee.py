@@ -18,56 +18,48 @@ class Yahtzee:
         self.chance = d1 + d2 + d3 + d4 + d5
         return self.chance
         
-    @staticmethod
-    def yathzee_scores_50(lista):
-        if lista.count(lista[0]) == 5:
+
+    def yathzee_scores_50(self,lista): # agrego el metodo a la clase
+        self.lista = lista
+        if self.lista.count(self.lista[0]) == 5:
             return 50
         else:
             return 0
 
-    @staticmethod
-    def ones(d1, d2, d3, d4, d5):
-        lista = (d1, d2, d3, d4, d5)
-        return lista.count(1)
+    def ones_twos_threes(self,lista,opcion): # Agrupación de funciones
+        self.lista = lista
+        if opcion.lower() == "ones":
+            return self.lista.count(1)
+        elif opcion.lower() == "twos":
+            return self.lista.count(2)*2
+        elif opcion.lower() == "threes":
+            return self.lista.count(3)*3
+        else:
+            return False
 
-    @staticmethod
-    def twos(d1, d2, d3, d4, d5):
-        lista = (d1, d2, d3, d4, d5)
-        return lista.count(2)*2
-
-    @staticmethod
-    def threes(d1, d2, d3, d4, d5):
-        lista = (d1, d2, d3, d4, d5)
-        return lista.count(3)*3
-
+    def make_list_counts(self,d1,d2,d3,d4,d5): # funcion comun para hacer counts
+                                            # además de que ahora forma parte de la clase
+        self.counts = [0]*6
+        self.counts[d1-1] += 1
+        self.counts[d2-1] += 1
+        self.counts[d3-1] += 1
+        self.counts[d4-1] += 1
+        self.counts[d5-1] += 1
+        return self.counts
     
-
-    @staticmethod
-    def score_pair(d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
+    
+    def score_pair(self): # función self recube counts
         at = 0
         for at in range(6):
-            if (counts[6-at-1] == 2):
+            if (self.counts[6-at-1] == 2):
                 return (6-at)*2
         return 0
 
-    @staticmethod
-    def two_pair(d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
+    def two_pair(self): # funcion self recibe counts
         n = 0
         score = 0
         for i in range(6):
-            if (counts[6-i-1] >= 2):
+            if (self.counts[6-i-1] >= 2):
                 n = n+1
                 score += (6-i)
 

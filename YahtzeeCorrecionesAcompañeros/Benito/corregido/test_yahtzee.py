@@ -5,34 +5,43 @@ from yahtzee import Yahtzee
 # available from http://pytest.org/
 
 
+
+
+
 def test_chance_scores_sum_of_all_dice():
+    Game = Yahtzee(1,2,3,4,5) # Al formar el metodo parte 
+                            # de la clase es necesario instanciarlo
+                            # para probarlo
     expected = 15
-    actual = Yahtzee.chance(2, 3, 4, 5, 1)
+    actual = Game.chance(2, 3, 4, 5, 1)
     assert expected == actual
-    assert 16 == Yahtzee.chance(3, 3, 4, 5, 1)
 
 
 def test_yahtzee_scores_50():
-    assert 50 == Yahtzee.yathzee_scores_50([4, 4, 4, 4, 4])
-    assert 50 == Yahtzee.yathzee_scores_50([6, 6, 6, 6, 6])
-    assert 0 == Yahtzee.yathzee_scores_50([6, 6, 6, 6, 3])
+    Game = Yahtzee(1,2,3,4,5)# Al formar el metodo parte 
+                            # de la clase es necesario instanciarlo
+                            # para probarlo
+    assert 50 == Game.yathzee_scores_50([4, 4, 4, 4, 4])
+    assert 50 == Game.yathzee_scores_50([6, 6, 6, 6, 6])
+    assert 0 == Game.yathzee_scores_50([6, 6, 6, 6, 3])
 
 
-def test_1s():
-    assert Yahtzee.ones(1, 2, 3, 4, 5) == 1
-    assert 2 == Yahtzee.ones(1, 2, 1, 4, 5)
-    assert 0 == Yahtzee.ones(6, 2, 2, 4, 5)
-    assert 4 == Yahtzee.ones(1, 2, 1, 1, 1)
-
-
-def test_2s():
-    assert 4 == Yahtzee.twos(1, 2, 3, 2, 6)
-    assert 10 == Yahtzee.twos(2, 2, 2, 2, 2)
-
-
-def test_threes():
-    assert 6 == Yahtzee.threes(1, 2, 3, 2, 3)
-    assert 12 == Yahtzee.threes(2, 3, 3, 3, 3)
+def test_1s_2s_3s():
+    Game = Yahtzee(1,2,3,4,5)# Al formar el metodo parte 
+                            # de la clase es necesario instanciarlo
+                            # para probarlo
+    
+    # asserts for ones
+    assert Game.ones_twos_threes([1, 2, 3, 4, 5],"ones") == 1
+    assert 2 == Game.ones_twos_threes([1, 2, 1, 4, 5],"ones")
+    assert 0 == Game.ones_twos_threes([6, 2, 2, 4, 5],"ones")
+    assert 4 == Game.ones_twos_threes([1, 2, 1, 1, 1],"ones")
+    # asserts for twos
+    assert 4 == Game.ones_twos_threes([1, 2, 3, 2, 6],"twos")
+    assert 10 == Game.ones_twos_threes([2, 2, 2, 2, 2],"twos")
+    # asserts for threes
+    assert 6 == Game.ones_twos_threes([1, 2, 3, 2, 3],"threes")
+    assert 12 == Game.ones_twos_threes([2, 3, 3, 3, 3], "threes")
 
 
 def test_fours_test():
@@ -53,16 +62,26 @@ def test_sixes_test():
     assert 18 == Yahtzee(6, 5, 6, 6, 5).sixes()
 
 
-def test_one_pair():
-    assert 6 == Yahtzee.score_pair(3, 4, 3, 5, 6)
-    assert 10 == Yahtzee.score_pair(5, 3, 3, 3, 5)
-    assert 12 == Yahtzee.score_pair(5, 3, 6, 6, 5)
+def test_one_pair(): # modificado para pasar test modifica la lista counts que pertenece a la clase
+    # y se comprueban las funciones que ahora son de la clase
+    Game = Yahtzee(1,2,3,4,5)
+    Game.make_list_counts(3, 4, 3, 5, 6)
+    assert 6 == Game.score_pair()
+    Game.make_list_counts(5, 3, 3, 3, 5)
+    assert 10 == Game.score_pair()
+    Game.make_list_counts(5, 3, 6, 6, 5)
+    assert 12 == Game.score_pair()
 
 
-def test_two_Pair():
-    assert 16 == Yahtzee.two_pair(3, 3, 5, 4, 5)
-    assert 18 == Yahtzee.two_pair(3, 3, 6, 6, 6)
-    assert 0 == Yahtzee.two_pair(3, 3, 6, 5, 4)
+def test_two_Pair():# modificado para pasar test modifica la lista counts que pertenece a la clase
+    # y se comprueban las funciones que ahora son de la clase
+    Game = Yahtzee(1,2,3,4,5)
+    Game.make_list_counts(3, 3, 5, 4, 5)
+    assert 16 == Game.two_pair()
+    Game.make_list_counts(3, 3, 6, 6, 6)
+    assert 18 == Game.two_pair()
+    Game.make_list_counts(3, 3, 6, 5, 4)
+    assert 0 == Game.two_pair()
 
 
 def test_three_of_a_kind():
