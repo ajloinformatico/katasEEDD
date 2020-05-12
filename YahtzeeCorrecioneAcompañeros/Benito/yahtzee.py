@@ -5,7 +5,7 @@
 # No hay ingun comentario en ninguna función
 
 ### 3º
-# La función chance revibe 5 dados y los suma si es la suma de 5 dados se podfria
+# La función chance recibe 5 dados y los suma si es la suma de 5 dados se podfria
 # simplement recibir self y sumar los dados de seff
 
 ### 4º
