@@ -1,9 +1,23 @@
 class Yahtzee:
 
-    @staticmethod
-    def chance(d1, d2, d3, d4, d5):
-        return d1 + d2 + d3 + d4 + d5
+    def __init__(self, d1, d2, d3, d4, d5): # init y metodos de la clase colocados
+                                            # al inicio
+        self.dice = [d1, d2, d3, d4, d5]
 
+    def fours(self):
+        return self.dice.count(4)*4
+
+    def fives(self):
+        return self.dice.count(5)*5
+
+    def sixes(self):
+        return self.dice.count(6)*6
+
+
+    def chance(self, d1, d2, d3, d4, d5): #hago el metodo de la clase 
+        self.chance = d1 + d2 + d3 + d4 + d5
+        return self.chance
+        
     @staticmethod
     def yathzee_scores_50(lista):
         if lista.count(lista[0]) == 5:
@@ -26,17 +40,7 @@ class Yahtzee:
         lista = (d1, d2, d3, d4, d5)
         return lista.count(3)*3
 
-    def __init__(self, d1, d2, d3, d4, d5):
-        self.dice = [d1, d2, d3, d4, d5]
-
-    def fours(self):
-        return self.dice.count(4)*4
-
-    def fives(self):
-        return self.dice.count(5)*5
-
-    def sixes(self):
-        return self.dice.count(6)*6
+    
 
     @staticmethod
     def score_pair(d1,  d2,  d3,  d4,  d5):

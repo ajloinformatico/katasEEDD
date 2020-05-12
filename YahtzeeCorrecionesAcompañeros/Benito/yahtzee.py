@@ -1,6 +1,15 @@
+### 1º
+# La ubicacón del codigo no es la más asecudada
+
+### 2º
+# No hay ingun comentario en ninguna función
+
+### 3º
+# La función chance revibe 5 dados y los suma si es la suma de 5 dados se podfria
+# simplement recibir self y sumar los dados de seff
 class Yahtzee:
 
-    @staticmethod
+    @staticmethod # podria ser un metodo de la clase
     def chance(d1, d2, d3, d4, d5):
         return d1 + d2 + d3 + d4 + d5
 
@@ -26,7 +35,7 @@ class Yahtzee:
         lista = (d1, d2, d3, d4, d5)
         return lista.count(3)*3
 
-    def __init__(self, d1, d2, d3, d4, d5):
+    def __init__(self, d1, d2, d3, d4, d5): # debe ir al principio de la clase
         self.dice = [d1, d2, d3, d4, d5]
 
     def fours(self):
