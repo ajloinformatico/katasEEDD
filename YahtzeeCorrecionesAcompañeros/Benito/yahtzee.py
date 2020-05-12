@@ -19,6 +19,11 @@
 ### 6º
 # small y large se pueden agrupar en una sosla funcion
 # y hacer que formen parte de la clase
+
+### 7º
+# se suprime tallies y trabaja sobre self.counts
+# se hace metodo de la clase
+
 class Yahtzee:
 
     @staticmethod # podria ser un metodo de la clase
@@ -140,6 +145,9 @@ class Yahtzee:
             return 0
         
 
+    ###
+    # se suprime tallies y trabaja sobre self.counts
+    # se hace metodo de la clase
     @staticmethod
     def fullHouse(d1,  d2,  d3,  d4,  d5):
         tallies = []

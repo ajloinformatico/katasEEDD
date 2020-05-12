@@ -104,47 +104,21 @@ class Yahtzee:
             return 0
 
 
-
-
-    """
-    @staticmethod
-    def smallStraight(d1,  d2,  d3,  d4,  d5):
-        if sorted((d1, d2, d3, d4, d5)) == [1, 2, 3, 4, 5]:
-            return 15
-        else: 
-            return 0
-
-    @staticmethod
-    def largeStraight(d1,  d2,  d3,  d4,  d5):
-        if sorted((d1, d2, d3, d4, d5 )) == [2,3,4,5,6]: 
-            return 20 
-        else: 
-            return 0
-        
-    """
-    @staticmethod
-    def fullHouse(d1,  d2,  d3,  d4,  d5):
-        tallies = []
+    # se ha agregado a la clase ademas de recibir el atributo
+    # de la clase counts
+    def fullHouse(self):
         _2 = False
         i = 0
         _2_at = 0
         _3 = False
         _3_at = 0
-
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-
         for i in range(6):
-            if (tallies[i] == 2):
+            if (self.counts[i] == 2):
                 _2 = True
                 _2_at = i+1
 
         for i in range(6):
-            if (tallies[i] == 3):
+            if (self.counts[i] == 3):
                 _3 = True
                 _3_at = i+1
 

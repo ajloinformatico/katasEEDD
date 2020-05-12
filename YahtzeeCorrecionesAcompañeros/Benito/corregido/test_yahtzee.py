@@ -110,5 +110,8 @@ def test_small_large_list():
 
 
 def test_fullHouse():
-    assert 18 == Yahtzee.fullHouse(6, 2, 2, 2, 6)
-    assert 0 == Yahtzee.fullHouse(2, 3, 4, 5, 6)
+    Game = Yahtzee(1, 2, 3, 4, 5)
+    Game.make_list_counts(6, 2, 2, 2, 6)
+    assert 18 == Game.fullHouse()
+    Game.make_list_counts(2, 3, 4, 5, 6)
+    assert 0 == Game.fullHouse()
