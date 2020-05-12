@@ -84,29 +84,29 @@ def test_two_Pair():# modificado para pasar test modifica la lista counts que pe
     assert 0 == Game.two_pair()
 
 
-def test_three_of_a_kind():
-    assert 9 == Yahtzee.three_of_a_kind(3, 3, 3, 4, 5)
-    assert 15 == Yahtzee.three_of_a_kind(5, 3, 5, 4, 5)
-    assert 9 == Yahtzee.three_of_a_kind(3, 3, 3, 3, 5)
+def test_four_of_a_kind_three_of_a_kind():
+    # Tres de un tipo
+    Game = Yahtzee(1,2,3,4,5) 
+    assert 9 == Game.four_of_a_kind_three_of_a_kind([3, 3, 3, 4, 5],"three")
+    assert 15 == Game.four_of_a_kind_three_of_a_kind([5, 3, 5, 4, 5],"three")
+    assert 9 == Game.four_of_a_kind_three_of_a_kind([3, 3, 3, 3, 5],"three")
+    # Cuatro de un tipo    
+    assert 12 == Game.four_of_a_kind_three_of_a_kind([3, 3, 3, 3, 5],"four")
+    assert 20 == Game.four_of_a_kind_three_of_a_kind([5, 5, 5, 4, 5],"four")
+    assert 12 == Game.four_of_a_kind_three_of_a_kind([3, 3, 3, 3, 3],"four")
+    assert 0 == Game.four_of_a_kind_three_of_a_kind([3, 3, 3, 2, 1],"four")
 
-
-def test_four_of_a_knd():
-    assert 12 == Yahtzee.four_of_a_kind(3, 3, 3, 3, 5)
-    assert 20 == Yahtzee.four_of_a_kind(5, 5, 5, 4, 5)
-    assert 12 == Yahtzee.four_of_a_kind(3, 3, 3, 3, 3)
-    assert 0 == Yahtzee.four_of_a_kind(3, 3, 3, 2, 1)
-
-
-def test_smallStraight():
-    assert 15 == Yahtzee.smallStraight(1, 2, 3, 4, 5)
-    assert 15 == Yahtzee.smallStraight(2, 3, 4, 5, 1)
-    assert 0 == Yahtzee.smallStraight(1, 2, 2, 4, 5)
-
-
-def test_largeStraight():
-    assert 20 == Yahtzee.largeStraight(6, 2, 3, 4, 5)
-    assert 20 == Yahtzee.largeStraight(2, 3, 4, 5, 6)
-    assert 0 == Yahtzee.largeStraight(1, 2, 2, 4, 5)
+    
+def test_small_large_list():
+    # small
+    Game = Yahtzee(1, 2, 3, 4, 5)
+    assert 14 == Game.small_large_list([1, 2, 3, 4, 5])
+    assert 14 == Game.small_large_list([2, 3, 4, 5, 1])
+    assert 0 == Game.small_large_list([1, 2, 2, 4, 5])
+    # large
+    assert 20 == Game.small_large_list([6, 2, 3, 4, 5])
+    assert 20 == Game.small_large_list([2, 3, 4, 5, 6])
+    assert 0 == Game.small_large_list([1, 2, 2, 4, 5])
 
 
 def test_fullHouse():

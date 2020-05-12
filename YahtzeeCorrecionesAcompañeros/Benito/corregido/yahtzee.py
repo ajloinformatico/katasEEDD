@@ -68,26 +68,45 @@ class Yahtzee:
         else:
             return 0
 
-    @staticmethod
-    def four_of_a_kind(d1,  d2,  d3,  d4,  d5):
-        lista = [d1, d2, d3, d4, d5]
-        if lista.count(lista[0]) >= 4:
-            return lista[0]*4
-        elif lista.count(lista[1]) >= 4:
-            return lista[1]*4
+
+
+    def four_of_a_kind_three_of_a_kind(self,lista,opcion): # union de los metodos four of a kind
+                                                # y three of a kind ademas de añadirla a la clase
+        self.lista = lista
+        if opcion == "three":
+            if self.lista.count(self.lista[0]) >= 3:
+                return self.lista[0]*3
+            elif self.lista.count(self.lista[1]) >=3:
+                return self.lista[1]*3
+            else:
+                return 0
+        
+        if opcion == "four":
+            if self.lista.count(self.lista[0]) >= 4:
+                return self.lista[0]*4
+            elif self.lista.count(lista[1]) >= 4:
+                return self.lista[1]*4
+            else: 
+                return 0
+
+        else:
+            return 0
+            
+    # unificadas lista small_large_list y largeStringth
+    # añadidas a la clase        
+    def small_large_list(self,lista):
+        self.lista = lista
+        if sorted(self.lista) == [1, 2, 3, 4, 5]:
+            return 14
+        if sorted(self.lista) == [2, 3, 4, 5, 6]:
+            return 20
         else:
             return 0
 
-    @staticmethod
-    def three_of_a_kind(d1,  d2,  d3,  d4,  d5):
-        lista = [d1, d2, d3, d4, d5]
-        if lista.count(lista[0]) >= 3:
-            return lista[0]*3
-        elif lista.count(lista[1]) >= 3:
-            return lista[1]*3
-        else:
-            return 0
 
+
+
+    """
     @staticmethod
     def smallStraight(d1,  d2,  d3,  d4,  d5):
         if sorted((d1, d2, d3, d4, d5)) == [1, 2, 3, 4, 5]:
@@ -102,7 +121,7 @@ class Yahtzee:
         else: 
             return 0
         
-
+    """
     @staticmethod
     def fullHouse(d1,  d2,  d3,  d4,  d5):
         tallies = []

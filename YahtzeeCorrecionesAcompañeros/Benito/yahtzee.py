@@ -15,6 +15,10 @@
 ### 5º
 # Las funciones ones, twos threes pueden ir en la misma función
 # además de ir dentro de la clase
+
+### 6º
+# small y large se pueden agrupar en una sosla funcion
+# y hacer que formen parte de la clase
 class Yahtzee:
 
     @staticmethod # podria ser un metodo de la clase
@@ -118,6 +122,9 @@ class Yahtzee:
         else:
             return 0
 
+    ###
+    # small y large se pueden agrupar en una sosla funcion
+    # y hacer que formen parte de la clase
     @staticmethod
     def smallStraight(d1,  d2,  d3,  d4,  d5):
         if sorted((d1, d2, d3, d4, d5)) == [1, 2, 3, 4, 5]:
