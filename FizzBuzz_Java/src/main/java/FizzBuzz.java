@@ -44,12 +44,12 @@ public class FizzBuzz {
      * si fizzBuzz == True
      */
     public String comprobarRango(int num){
-        if(fizz(num))
-            return "fizz";
+        if(fizzBuzz(num))
+            return "fizz buzz!";
         else if(buzz(num))
             return "buzz";
-        else if(fizzBuzz(num))
-            return "fizz buzz!";
+        else if(fizz(num))
+            return "fizz";
         else
             return "None";
     }
