@@ -1,0 +1,12 @@
+Hay todo tipo de cylons. El truco es que algunos parecen humanos. Usando la herencia crea un
+prototipo de Cylon y crea diversos modelos de Cylon: raider, basestar, heavy raider,reconnaissance
+drone, centurión... Los Cylons deberían tener un modelo, y deberían tener una función de ataque,
+que devolverá la cadena "¡Destruir a todos los humanos!"
+Dado que algunos cylons parecen humanos, haga un objeto hijo llamado Pellejudo (HumanSkin). Esto debería tener un modelo, como lo hacen los Cylons, y debería tener el mismo ataque.
+Sin embargo, también debe tener una función llamada infiltrar, que devolverá la cadena "Infiltrar
+las colonias".
+La misión de los humanos es desenchufar a los cylons.
+También existen los cylons híbridos de humano con maquina. Los cylons híbridos no sólo tienen
+una piel humana, su aspecto interior también es muy humano. Crea los cylons híbridos, recuerda
+que son parte cylon y parte humano, pero que no quieren "desenchufar" a otros cylons.
+Algunos híbridos están peleados con el resto de cylons y sí quiren "desenchufar" a otros cylons.

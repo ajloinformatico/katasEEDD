@@ -9,25 +9,25 @@ public class Main {
         System.out.println("Implementación División " + n1 + " y " + n2);
         Dividir division = new Dividir();
         division.ejecuta(n1, n2);
-        System.out.println( division.resultado);
+        System.out.println( division.getResultado());
 
         //Multiplicación
         System.out.println("Implementación Multiplicación " + n1 + " y " + n2);
         Multiplicar multiplicacion = new Multiplicar();
         multiplicacion.ejecuta(n1, n2);
-        System.out.println( multiplicacion.resultado);
+        System.out.println(multiplicacion.getResultado());
 
         //Resta
         System.out.println("Implementación de la resta " + n1 + " y " + n2);
         Restar resta = new Restar();
         resta.ejecuta(n1, n2);
-        System.out.println(resta.resultado);
+        System.out.println(resta.getResultado());
 
         //Division
         System.out.println("Implementación de la suma " + n1 + " y " + n2);
         Sumar suma = new Sumar();
         suma.ejecuta(n1, n2);
-        System.out.println(suma.resultado);
+        System.out.println(suma.getResultado());
 
 
 
