@@ -1,20 +1,14 @@
 package Cylon1_2;
 
-import sun.swing.MenuItemCheckIconFactory;
+public class Hibrido extends Pellejudo implements Humanos {
+    private boolean desc_con;
 
-public class Hibrido extends PrototipoCylon implements Humanos {
-    boolean enchufa = false;
-
-    public Hibrido(){
-        this.modelo = "humano";
-        this.enchufa = enchufa;
-
+    public Hibrido(boolean desc_con) {
+        this.desc_con = desc_con;
     }
 
     @Override
-    public boolean desconecta_conecta(boolean yes_no) {
-        if(yes_no == true)
-            return true;
-        return false;
+    public boolean conectaDes() {
+        return this.desc_con;
     }
 }
